@@ -48,70 +48,58 @@
 
         /* Modern Navbar */
         nav {
-            position: relative;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(16px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+            background: rgba(10, 130, 90, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
+        
         nav ul {
-            display: flex;
-            gap: 0.5rem;
             list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
         }
-
-        nav a {
-            color: #a7f3d0;
-            text-decoration: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        nav li {
             position: relative;
-            overflow: hidden;
         }
-
+        
+        nav a {
+            display: block;
+            padding: 25px 35px;
+            color: #6ee7b7;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
         nav a::before {
             content: '';
-            position: relative;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
-            transition: left 0.5s;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d1fae5, rgba(91, 229, 183, 0.912));
+            transform: translateX(-50%);
+            transition: width 0.4s ease;
         }
-
-        nav a:hover::before {
-            left: 100%;
-        }
-
+        
         nav a:hover {
-            background: rgba(16, 185, 129, 0.1);
-            color: #6ee7b7;
-            transform: translateY(-2px);
+            color: #ffffff;
+        }
+        
+        nav a:hover::before {
+            width: 70%;
         }
 
         /* Hero Section */
@@ -614,7 +602,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">Surah Luqman</div>
+            <!-- <div class="nav-logo">Surah Luqman</div> -->
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#tauhid">Tauhid</a></li>
@@ -1009,6 +997,5 @@
     <a href="#home" class="scroll-top">↑</a>
 
 </body>
-
 
 </html>
